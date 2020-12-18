@@ -1,0 +1,51 @@
+menu.lang.name=Language
+menu.file.name=File
+menu.settings.name=Settings
+menu.item.dark.name=Dark mode
+menu.item.close.name=Close
+menu.item.hid.name=HID Settings
+
+axis.time.name=Time/ms
+axis.voltage.name=Voltage/V
+axis.current.name=Current/mA
+axis.power.name=Power/mW
+
+label.voltage.now.name=Voltage (now):
+label.voltage.min.name=Voltage (min):
+label.voltage.max.name=Voltage (max):
+label.current.now.name=Current (now):
+label.current.min.name=Current (min):
+label.current.max.name=Current (max):
+label.power.now.name=Power (now):
+label.power.min.name=Power (min):
+label.power.max.name=Power (max):
+label.logfile.name=Log file
+label.search.name=Search
+label.datapoints.name=Data points
+label.filesize.name=File size
+label.connected.name=Connection:
+label.ports.name=COM ports:
+label.bytes.name=Bytes
+label.connected.false.name=Disconnected
+label.connected.trying.name=Connecting...
+label.connected.waiting.name=Waiting for response...
+label.connected.true.name=Connected
+label.usehid.name=Use HID:
+label.serialnum.name=Serial Number:
+
+button.reset.minmax.name=Reset min/max values
+button.reset.graphs.name=Reset graphs
+button.reset.all.name=Reset all displays
+button.logger.start.name=Start logging
+button.logger.stop.name=Stop logging
+button.scan.name=Scan for ports
+button.connect.name=Connect
+button.disconnect.name=Disconnect
+button.ok.name=Okay
+button.cancel.name=Cancel
+
+desc.csv.name=Comma separated values
+
+dialog.hid.name=HID Settings
+dialog.header.hid.1.name=Settings for HID Device
+dialog.header.hid.2.name=Restart to apply!

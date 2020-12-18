@@ -1,0 +1,42 @@
+menu.lang.name=Sprache
+menu.file.name=Datei
+menu.settings.name=Einstellungen
+menu.item.dark.name=Dunkler Modus
+menu.item.close.name=Beenden
+
+axis.time.name=Zeit/ms
+axis.voltage.name=Spannung/V
+axis.current.name=Strom/mA
+axis.power.name=Leistung/mW
+
+label.voltage.now.name=Spannung (now):
+label.voltage.min.name=Spannung (min):
+label.voltage.max.name=Spannung (max):
+label.current.now.name=Strom (now):
+label.current.min.name=Strom (min):
+label.current.max.name=Strom (max):
+label.power.now.name=Leistung (now):
+label.power.min.name=Leistung (min):
+label.power.max.name=Leistung (max):
+label.logfile.name=Logdatei
+label.search.name=Suchen
+label.datapoints.name=Datenpunkte
+label.filesize.name=Dateigröße
+label.connected.name=Verbindung:
+label.ports.name=COM Ports:
+label.bytes.name=Bytes
+label.connected.false.name=Getrennt
+label.connected.trying.name=Verbinde...
+label.connected.waiting.name=Warte auf Antwort...
+label.connected.true.name=Verbunden
+
+button.reset.minmax.name=Min/Max zurücksetzen
+button.reset.graphs.name=Graphen zurücksetzen
+button.reset.all.name=Alle Anzeigen zurücksetzen
+button.logger.start.name=Starte Logging
+button.logger.stop.name=Stoppe Logging
+button.scan.name=Ports scannen
+button.connect.name=Verbinden
+button.disconnect.name=Verbindung trennen
+
+desc.csv.name=Comma separated values
