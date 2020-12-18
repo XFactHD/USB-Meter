@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name USB-Meter-rescue)(type Legacy)(uri ${KIPRJMOD}/USB-Meter-rescue.lib)(options "")(descr ""))
+)

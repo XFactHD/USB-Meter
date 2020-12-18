@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:USB-Meter-cache
 EELAYER 30 0
 EELAYER END
 $Descr A2 23386 16535
@@ -15,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector:USB_A J3
+L USB-Meter-rescue:USB_A-Connector J3
 U 1 1 5C23E990
 P 14700 2450
 F 0 "J3" H 14755 2917 50  0000 C CNN
@@ -110,7 +109,7 @@ D_HOST+
 Text GLabel 12550 6600 0    50   Input ~ 0
 D_HOST-
 $Comp
-L Regulator_Linear:AP2127K-3.3 U2
+L USB-Meter-rescue:AP2127K-3.3-Regulator_Linear U2
 U 1 1 5C244B64
 P 4700 5000
 F 0 "U2" H 4700 5342 50  0000 C CNN
@@ -1400,7 +1399,7 @@ Wire Wire Line
 Text GLabel 2650 14300 2    50   Input ~ 0
 VEXT_DET_CTRL
 $Comp
-L Connector:USB_B_Micro J2
+L USB-Meter-rescue:USB_B_Micro-Connector J2
 U 1 1 5CF47233
 P 1550 7550
 F 0 "J2" H 1605 8017 50  0000 C CNN
@@ -2083,7 +2082,7 @@ Wire Wire Line
 Text GLabel 2050 14600 0    50   Input ~ 0
 GND_CTRL
 $Comp
-L Power_Protection:USBLC6-2SC6 U3
+L USB-Meter-rescue:USBLC6-2SC6-Power_Protection U3
 U 1 1 5DD22C7E
 P 4150 7600
 F 0 "U3" V 4500 7250 50  0000 L CNN
@@ -2094,7 +2093,7 @@ F 3 "http://www2.st.com/resource/en/datasheet/CD00050750.pdf" H 4350 7950 50  00
 	0    1    -1   0   
 $EndComp
 $Comp
-L Power_Protection:USBLC6-2SC6 U4
+L USB-Meter-rescue:USBLC6-2SC6-Power_Protection U4
 U 1 1 5DD4FF01
 P 12550 2450
 F 0 "U4" V 12900 2100 50  0000 L CNN
