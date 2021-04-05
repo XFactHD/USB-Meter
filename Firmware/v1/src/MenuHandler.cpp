@@ -4,7 +4,7 @@ Menu* mainMenuPtr;
 BackItem backMain = BackItem(writeConfigToFRAM);
 
 /** Overcurrent protection options **/
-Menu menuOcpOptions = Menu("OCP");
+Menu menuOcpOptions = Menu("OCP Settings", "OCP");
 
 UnsignedIntValue valueCurrentLimit = UnsignedIntValue(getCurrentLimitPtr(), CURRENT_LIMIT_MIN, CURRENT_LIMIT_MAX, 1, true);
 MenuItem itemCurrentLimit = MenuItem("Max current", "mA", &valueCurrentLimit, true);
@@ -17,20 +17,17 @@ MenuItem itemSpikeDebounce = MenuItem("Spike debounce", "ms", &valueSpikeDebounc
 BackItem backOCP = BackItem(updatePowerConfig);
 /** Overcurrent protection options end **/
 
-/** Options menu **/
-Menu menuOptions = Menu("Options");
-
-//Display options
-Menu menuDisplayOptions = Menu("Display");
+/** Display options */
+Menu menuDisplayOptions = Menu("Display Settings", "Display");
 
 UnsignedIntValue valueDisplayRefresh = UnsignedIntValue(getDisplayRefreshPtr(), DISPLAY_INTERVAL_MIN, DISPLAY_INTERVAL_MAX, DISPLAY_INTERVAL_INCREMENT);
 MenuItem itemDisplayRefresh = MenuItem("Refresh rate", "ms", &valueDisplayRefresh, true);
 
 BackItem backDisplayOptions = BackItem(updateDisplaySettings);
-//Display options end
+/** Display options end */
 
-//Logger options
-Menu menuLoggerOptions = Menu("Logger");
+/** Logger options */
+Menu menuLoggerOptions = Menu("Logger Settings", "Logger");
 
 UnsignedIntValue valueLogInterval = UnsignedIntValue(getLogIntervalPtr(), LOG_INTERVAL_MIN, LOG_INTERVAL_MAX, LOG_INTERVAL_INCREMENT);
 MenuItem itemLogInterval = MenuItem("Log interval", "ms", &valueLogInterval, true);
@@ -39,10 +36,7 @@ BoolValue valueLogOCEvents = BoolValue(getLogOCEventsPtr());
 MenuItem itemLogOCEvents = MenuItem("Log OC Events", "", &valueLogOCEvents, true);
 
 BackItem backLogOptions = BackItem(updateLoggerConfig);
-//Logger options end
-
-BackItem backOptions = BackItem();
-/** Options menu end **/
+/** Logger options end */
 
 /** Display off button **/
 MenuButton buttonDisplayOff = MenuButton("Display off", "", switchDisplayOff);
@@ -65,27 +59,26 @@ void initMenuHandler() {
 
   //Main menu
   mainMenuPtr->addItem(&menuOcpOptions);
-  mainMenuPtr->addItem(&menuOptions);
+  mainMenuPtr->addItem(&menuDisplayOptions);
+  mainMenuPtr->addItem(&menuLoggerOptions);
   mainMenuPtr->addItem(&buttonDisplayOff);
   mainMenuPtr->addItem(&menuInfo);
   mainMenuPtr->addItem(&backMain);
 
+  //OCP options
   menuOcpOptions.addItem(&itemCurrentLimit);
   menuOcpOptions.addItem(&buttonMaxCurrent);
   menuOcpOptions.addItem(&itemSpikeDebounce);
   menuOcpOptions.addItem(&backOCP);
 
-  //Options menu
-  menuOptions.addItem(&menuDisplayOptions);
+  //Display options menu
   menuDisplayOptions.addItem(&itemDisplayRefresh);
   menuDisplayOptions.addItem(&backDisplayOptions);
   
-  menuOptions.addItem(&menuLoggerOptions);
+  //Logger options menu
   menuLoggerOptions.addItem(&itemLogInterval);
   menuLoggerOptions.addItem(&itemLogOCEvents);
   menuLoggerOptions.addItem(&backLogOptions);
-  
-  menuOptions.addItem(&backOptions);
 
   //Info menu
   menuInfo.addItem(&itemAuthor);

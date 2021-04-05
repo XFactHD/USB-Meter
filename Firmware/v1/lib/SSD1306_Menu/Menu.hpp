@@ -16,7 +16,8 @@ class Menu;
 //Abstract classes
 class AbstractMenu {
 public:
-    explicit AbstractMenu(const char* name) : name(name) {}
+    explicit AbstractMenu(const char* name) : AbstractMenu(name, name) {}
+    AbstractMenu(const char* name, const char* shortName) : name(name), shortName(shortName) {}
     virtual void handleButtons(bool up, bool down, bool left, bool right, bool center, bool upHeld, bool downHeld, bool leftHeld, bool rightHeld) = 0;
     virtual void draw(Adafruit_SSD1306* gfx, int x, int y) = 0;
     virtual bool isMenu() = 0;
@@ -26,10 +27,12 @@ public:
     virtual void markDirty() = 0;
 
     virtual const char* getName() { return name; }
+    const char* getShortName() { return shortName; }
     void setParent(Menu* menu) { parent = menu; }
 
 protected:
     const char* name;
+    const char* shortName;
     Menu* parent = nullptr;
 };
 
@@ -110,6 +113,7 @@ private:
 class Menu : public AbstractMenu {
 public:
     explicit Menu(const char* name) : AbstractMenu(name) {}
+    Menu(const char* name, const char* shortName) : AbstractMenu(name, shortName) {}
     void handleButtons(bool up, bool down, bool left, bool right, bool center, bool upHeld, bool downHeld, bool leftHeld, bool rightHeld) override;
     void draw(Adafruit_SSD1306* gfx, int x, int y) override;
     bool isMenu() override { return true; }
@@ -133,6 +137,7 @@ protected:
 class MainMenu : public Menu {
 public:
     explicit MainMenu(const char* name) : Menu(name) {}
+    MainMenu(const char* name, const char* shortName) : Menu(name, shortName) {}
     bool draw(Adafruit_SSD1306* gfx);
     void markDirty() override { dirty = true; }
     void open();

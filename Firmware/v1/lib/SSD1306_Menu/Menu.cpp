@@ -10,11 +10,11 @@ void Menu::draw(Adafruit_SSD1306* gfx, int x, int y) {
   gfx->setTextColor(COLOR_WHITE);
   gfx->setTextSize(1);
 
-  int textLen = (int)strlen(name) * 12;
+  int textLen = (int)strlen(shortName) * 12;
   int textX = 64 - (textLen / 2);
   gfx->setCursor(textX, 0);
   gfx->setTextSize(2);
-  gfx->print(name);
+  gfx->print(shortName);
   gfx->setTextSize(1);
 
   if(subMenuCount > 4) {
